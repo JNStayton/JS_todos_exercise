@@ -1,0 +1,65 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+input[type="submit"] {
+	background-color: rgb(92, 13, 138);
+	color: white;
+	border-radius: 30px;
+}
+
+input[type="submit"]:hover {
+	background-color: rgb(149, 60, 201);
+}
+
+input[type="text"] {
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	font-family: sans-serif;
+	border-radius: 30px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.btn {
+	font-family: sans-serif;
+	font-weight: bold;
+	border-radius: 30px;
+	background-color: rgb(160, 12, 49);
+	color: white;
+	margin-left: 50px;
+}
+
+.btn:hover {
+	background-color: rgb(224, 60, 101);
+}
+
+.btn:active {
+	box-shadow: 0 3px rgb(59, 28, 28);
+	transform: translateY(2px);
+}
+
+.done {
+	color: green;
+	text-decoration: line-through;
+	transition: .3s;
+}
+
+.done .btn {
+	background-color: green;
+	transition: .3s;
+}
+
+.done .btn:hover {
+	background-color: rgb(4, 211, 4);
+}
