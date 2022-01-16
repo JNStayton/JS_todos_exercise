@@ -3,7 +3,8 @@ const todoInput = document.querySelector('input[name="todoInput"]');
 let todos = [];
 const storedTodos = JSON.parse(localStorage.getItem('todo list'));
 
-//retrieve with class; not very neat
+//I did some extra practice on retrieving localStorage, since I found it a little confusing. I came up with three potential ways to do it.
+//option 1: retrieve localStorage; a little clunky
 // if (storedTodos) {
 // 	todos = storedTodos;
 // 	storedTodos.forEach((storedTodo) => {
@@ -20,17 +21,28 @@ const storedTodos = JSON.parse(localStorage.getItem('todo list'));
 // 	});
 // }
 
-//neater retrieve localStorage WITH class
-//make sure the todo array matches localStorage
+//option 2: neater retrieve localStorage; I think this is the best option
 if (storedTodos) {
 	todos = storedTodos;
-	for (let task of storedTodos) {
+	for (i = 0; i < storedTodos.length; i++) {
 		let li = document.createElement('li');
-		li.innerHTML = task.todo;
-		li.className = task.class;
+		li.innerHTML = storedTodos[i].todo;
+		li.className = storedTodos[i].class;
 		list.append(li);
 	}
 }
+
+//option 3: kinda neat retrieve localStorage
+//make sure the todo array matches localStorage
+// if (storedTodos) {
+// 	todos = storedTodos;
+// 	for (let task of storedTodos) {
+// 		let li = document.createElement('li');
+// 		li.innerHTML = task.todo;
+// 		li.className = task.class;
+// 		list.append(li);
+// 	}
+// }
 
 //mark a todo as complete (cross out the text)
 //button to remove a todo that ALSO updates localStorage
